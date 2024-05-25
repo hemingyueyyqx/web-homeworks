@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form表单布局</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .container {
+            border: 1px solid red;
+            max-width: 960px;
+            margin: 15px auto;
+            padding: 10px;
+            border-radius: 10px;
+        }
+        .form-group-input {
+            display: flex;
+            position: relative;
+            padding: 10px 0;
+            margin: 15px 0;
+        }
+        .form-group-input span{
+            position: absolute;
+            top: 0;
+            font-size: 20px;
+            transition: font-size 0.5s, color 0.5s;
+        }
+        .form-group-input input {
+            outline: none;
+            width: 100%;
+            border: none;
+            border-bottom: 1px solid black;
+            padding: 10px;
+        }
+        .form-group-input input:focus {
+            border-bottom: 1px solid blue;
+        }
+        .form-group-input input:focus + span {
+            color: green;
+            font-size: 15px;
+            top: -8px;
+        }
+        .form-group-input input:valid + span {
+            color: green;
+            font-size: 15px;
+            top: -8px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>登录</h1>
+    <form>
+        <div class="form-group-input">
+            <input type="text" required>
+            <span>学号*</span>
+        </div>
+        <div class="form-group-input" >
+            <input type="password" required>
+            <span>密码*</span>
+        </div>
+    </form>
+</div>
+</body>
+</html>

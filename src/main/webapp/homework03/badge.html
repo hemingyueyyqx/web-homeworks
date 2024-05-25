@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Badges布局</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+   <style>
+       .badge {
+           position: relative;
+           display: inline-block;
+       }
+
+       .badge-content {
+           color: deepskyblue;
+           font-family: 'Material Icons';
+           font-weight:normal ;
+           font-style: normal;
+           font-size: 150px;
+           line-height: 1;
+           letter-spacing: normal;
+           text-transform: none;
+           display: inline-block;
+           white-space: nowrap;
+           word-wrap: normal;
+           direction: ltr;
+           -webkit-font-feature-settings: 'liga';
+           -webkit-font-smoothing: antialiased;
+
+       }
+       .badge-wrapper {
+           background-color:red ;
+           color: white;
+           font-size: 40px;
+           border-radius: 50%;
+           border: 5px solid white;
+           padding: 5px;
+           position: absolute;
+           top: 0;
+           right: 0;
+
+       }
+   </style>
+
+</head>
+<body>
+<div class="badge">
+    <i class="badge-content">bug_report</i>
+    <span class="badge-wrapper">12</span>
+</div>
+<div class="badge">
+    <i class="badge-content">android</i>
+    <span class="badge-wrapper">18</span>
+</div>
+<div class="badge">
+    <i class="badge-content">shopping_cart</i>
+    <span class="badge-wrapper">10</span>
+</div>
+</body>
+</html>
