@@ -11,6 +11,8 @@
     }
      .container {
          max-width: 960px;
+         border: 1px solid red;
+         margin: auto;
      }
      .row {
          display: flex;
@@ -21,34 +23,39 @@
          padding: 20px;
          margin: 15px;
          text-align: center;
+         border: 1px solid red;
      }
      .card-header img {
+         width: 100%;
          border-radius: 50%;
      }
      .card-content {
-        text-align: justify;
+         text-align: justify;
+         margin: 5px;
      }
-     .card-footer {
-         display: flex;
-         padding: 10px;
-         justify-content: flex-end;
-     }
-     .card-footer a {
+     .card-footer .more {
          border-radius: 8px;
-         padding: 5px;
+         padding: 5px 10px;
          text-decoration: none;
          color: white;
-         display: flex;
+         display: inline-block;
          background-color: #e86464;
 
      }
      .card:hover {
          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-         opacity: 1;
+         opacity: 1.0;
      }
-     .card-footer a:hover {
+     .card:hover .card-header img {
+         opacity: 1.0;
+     }
+    .card-footer {
+        text-align: right;
+    }
+     .card-footer .more:hover {
          background-color: red;
      }
+
     </style>
 </head>
 <body>
