@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Navigation Drawer响应式布局升级版</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .container {
+            display: flex;
+        }
+        .nav {
+            background-color: pink;
+            transition: all 0.5s;
+            position: absolute;
+        }
+        .nav ul {
+            list-style-type: none;
+            margin-bottom: 0;
+            height: 100%;
+        }
+        .nav ul li a {
+            display: flex;
+            width: 100%;
+            align-items: center;
+            color: black;
+            text-decoration: none;
+            padding: 10px;
+        }
+        .nav a:hover {
+            background-color: white;
+            min-width: 120px;
+        }
+        .nav a:hover span {
+            display: inline-block;
+        }
+        .nav a:hover i {
+           color: red;
+        }
+        .nav span {
+            margin-left: 10px;
+            display: none;
+        }
+        .main-content {
+            margin-left: 30px;
+            padding: 20px;
+        }
+        @media (max-width: 600px) {
+            .nav {
+                min-width: 60px;
+
+
+            }
+
+            span {
+                display: none;
+            }
+        }
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="nav">
+        <ul>
+            <li>
+                <a href="#">
+                    <i class="material-icons">home</i>
+                    <span>Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="material-icons">account_circle</i>
+                    <span>Profile</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="material-icons">settings</i>
+                    <span>Settings</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="material-icons">logout</i>
+                    <span>Logout</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="main-content">
+        <h1>Main Content Area</h1>
+        <p>This is the main content area. It will expand to fill the remaining space.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, animi, aut dignissimos doloremque id iusto
+            laudantium nam nihil quis quisquam recusandae tempore voluptate. A aut consequatur dignissimos dolor dolores
+            esse fugit impedit iste laudantium minima modi molestias nemo neque nihil nobis, nostrum numquam possimus quae
+            quod reprehenderit sequi tempora veritatis?</p>
+    </div>
+</div>
+</body>
+</html>
