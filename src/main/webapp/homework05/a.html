@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .container {
+            max-width: 960px;
+            position: relative;
+        }
+        .fab {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+       .fab-btn{
+           font-size: 4em;
+           cursor: pointer;
+           color: deepskyblue;
+       }
+       .fab-menu {
+           display: none;
+           list-style: none;
+           text-align: center;
+       }
+       .fab-menu-btn {
+           font-size: 2.5em;
+           color: deepskyblue;
+       }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="fab">
+        <i class="material-icons fab-btn" data-replace="remove_circle">account_circle</i>
+        <ul class="fab-menu">
+            <li><a href=""><i class="material-icons fab-menu-btn">edit</i></a></li>
+            <li><a href=""><i class="material-icons fab-menu-btn">color_lens</i></a></li>
+            <li><a href=""><i class="material-icons fab-menu-btn" style="color: red">delete_forever</i></a></li>
+        </ul>
+    </div>
+</div>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+$(function () {
+    let fabButton;
+    let temp;
+    let nextIcons;
+    $(".fab").hover(function () {
+        fabButton = $(this).children(".fab-btn");
+        temp = fabButton.text();
+         fabButton.text(fabButton.data("replace"));
+         fabButton.animate({rotate:"180deg"});
+         nextIcons = fabButton.next(".fab-menu");
+         nextIcons.fadeIn(1000);
+    }, () => {
+        fabButton.text(temp);
+        fabButton.animate({rotate:"0deg"});
+        nextIcons.fadeOut();
+    })
+})
+</script>
+</body>
+</html>

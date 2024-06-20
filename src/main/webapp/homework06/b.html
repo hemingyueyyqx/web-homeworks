@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .container {
+            max-width: 960px;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            height: 100vw;
+            width: 100vw;
+            background-color: rgba(0,0,0,0.2);
+            top: 0;
+            left: 0;
+        }
+        .modal-dialog {
+            position: relative;
+            width: 450px;
+            background-color: #fff;
+            margin: auto;
+            border-radius: 5px;
+        }
+        .modal-dialog-header {
+            padding: 10px;
+            border-bottom: 1px solid #dad3d3;
+        }
+        .modal-dialog-content {
+            padding: 10px;
+            border-bottom: 1px solid #dad3d3;
+        }
+        .modal-dialog-footer {
+            padding: 10px;
+            text-align: right;
+        }
+        button {
+            border: none;
+            border-radius: 5px;
+            padding: 10px 8px;
+            color: white;
+            background-color: #949494;
+            cursor: pointer;
+        }
+        .button-success {
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur distinctio enim ex excepturi exercitationem
+        harum laudantium molestiae molestias, nam non pariatur provident quam quos soluta tempora velit vitae voluptatum.
+        Hic, neque, tempore. <br>
+        <button data-modal-target="modal-1">点击激活模态框</button>
+    </p>
+    <div class="modal" id="modal-1">
+        <div class="modal-dialog">
+            <div class="modal-dialog-header">
+                <h2>Modal title</h2>
+            </div>
+            <div class="modal-dialog-content">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere, optio.
+            </div>
+            <div class="modal-dialog-footer">
+                <button data-modal-dismiss>Close</button>
+                <button class="button-success">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+    $(function () {
+        let Modal;
+       $("[data-modal-target]").click(function () {
+           let ModalId = $(this).data("modal-target");
+           Modal = $(`#${ModalId}`);
+           Modal.fadeIn();
+           Modal.children(".modal-dialog").animate({top: "40px"});
+       })
+        $(".modal, [data-modal-dismiss]").click(() => {
+            Modal.fadeOut();
+        })
+        $(".modal-dialog").click(() => false);
+    })
+</script>
+</body>
+</html>
